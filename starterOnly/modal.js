@@ -73,7 +73,7 @@ form.addEventListener("submit", (e) => {
     error = true;
   }
 
-  if ( quantity.value == null || quantity.value > 99 ) {
+  if ( quantity.value.trim() < 0 || quantity.value.trim() > 99 ) {
     quantity.style.border = "2px solid red";
     quantity.style.backgroundColor = "#FD9F8B";
     document.getElementById("quantityError").textContent = "Veuillez entrer un chiffre entre 0 et 99";

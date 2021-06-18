@@ -300,6 +300,12 @@ input[data-error]::after {
   top: 19%;
 }
 
+.error {
+  font-size: 1rem;
+  color: red;
+  display: block;
+}
+
 .close {
   position: absolute;
   right: 15px;
