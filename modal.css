@@ -67,6 +67,10 @@ img {
   display: none;
 }
 
+.home {
+  border-bottom: 1px solid white;
+}
+
 @media screen and (max-width: 768px) {
   .topnav a {
     display: none;
@@ -193,17 +197,17 @@ main {
   visibility: hidden;
 }
 
-.btn-fermer {
+.btn-close {
   visibility: hidden;
 }
 
-.btn-fermer-visible {
+.btn-close-visible {
   visibility: visible;
   font-size: 145%;
   background: #fe142f;
   border: #fe142f;
   display: flex;
-  margin: auto;
+  margin: 105px;
   padding: 2em;
   color: #fff;
   padding: 0.75rem 2.5rem;
