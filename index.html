@@ -58,13 +58,13 @@
           <form name="reserve" id="sectionForm" action="index.html" method="get">
             <div class="formData">
               <label for="first">Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first" /><br>
-              <span class="error" id="firstNameError"></span>
+              <input class="text-control" class="not-valid" type="text" id="first" name="first" /><br>
+              <span class="error" id="firstError"></span>
             </div>
             <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" /><br>
-              <span class="error" id="lastNameError"></span>
+              <span class="error" id="lastError"></span>
             </div>
             <div class="formData">
               <label for="email">E-mail</label><br>
@@ -114,7 +114,7 @@
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
-                <span class="error" id="checkboxError"></span>
+                <span class="error" id="checkbox1Error"></span>
               </label>
               <br>
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
@@ -129,12 +129,11 @@
           <div class="message" id="message">
             <span class="thx">Merci !</span>
             <span>Votre réservation a été reçue.</span>
-            <input class="btn-close" id="btn-close" type="button" value="Fermer" />
+            <button class="btn-close" id="btn-close" value="Fermer"></button>
           </div>
         </div>
       </div>
     </div>
-    <div class="bbottom" id="bbottom">
 
 
 

@@ -14,8 +14,10 @@ const modalBottom = document.querySelectorAll(".bbottom");
 const formData = document.querySelectorAll(".formData");
 const close = document.getElementById("close");
 const form = document.getElementById("sectionForm");
-const fermer = document.getElementById("btn-close");
+const btnClose = document.getElementById("btn-close");
 const message = document.getElementById("message");
+const inputForm = document.querySelectorAll("text-control");
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -24,7 +26,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
   form.classList.remove("sectionFormClose");
-  fermer.style.visibility = "hidden";
+  btnClose.style.visibility = "hidden";
   message.style.visibility = "hidden";
 } 
 
@@ -40,10 +42,28 @@ close.addEventListener("click", closeModal);
 
 // Close modal message
 
-fermer.addEventListener("click", closeModal);
+btnClose.addEventListener("click", closeModal);
 
 
 // Validation
+
+function addError(label, message) {
+  document.getElementById(label).style.border = "2px solid red";
+  document.getElementById(`${label}Error`).textContent = message;
+}
+
+function removeError (label) {
+  document.getElementById(label).style.border = "none";
+  document.getElementById(`${label}Error`).textContent = "";
+}
+
+function checkRequired(inputArr) {
+  inputArr.forEach(function(input) {
+    if (input.value.trim() === '') {
+      input.innerText = "Ce champ est requis";
+    } 
+  });
+}
 
 
 form.addEventListener("submit", (e) => {
@@ -57,62 +77,54 @@ form.addEventListener("submit", (e) => {
   const quantity = document.getElementById("quantity");
   const conditions = document.getElementById("checkbox1");
   let error = false;
-
+ 
   if ( firstName.value.length < 2) {
-    firstName.style.border = "2px solid red";
-    document.getElementById("firstNameError").textContent = "Veuillez entrer 2 caractères minimum";
+    addError("first", "Veuillez entrer 2 caractères minimum");
     error = true;
   } else {
-    firstName.style.border = "none";
-    document.getElementById("firstNameError").textContent = "";
+    removeError("first");
   }
 
   if ( lastName.value.length < 2) {
-    lastName.style.border =  "2px solid red";
-    document.getElementById("lastNameError").textContent = "Veuillez entrer 2 caractères minimum";
+    addError("last", "Veuillez entrer 2 caractères minimum");
     error = true;
   } else {
-    lastName.style.border = "none";
-    document.getElementById("lastNameError").textContent = "";
+    removeError("last");
+    error = true;
   }
 
   if ( !email.value.match(emailRegex)) {
-    email.style.border =  "2px solid red";
-    document.getElementById("emailError").textContent = "Veuillez entrer un email valide";
+    addError("email", "Veuillez entrer un email valide");
     error = true;
   } else {
-    email.style.border = "none";
-    document.getElementById("emailError").textContent = "";
+    removeError("email");
   }
 
   if ( !birthday.value.match(birthdayRegex)) {
-    birthday.style.border =  "2px solid red";
-    document.getElementById("birthdateError").textContent = "Veuillez entrer une date valide";
+    addError("birthdate", "Veuillez entrer une date valide");
     error = true;
   } else {
-    birthdate.style.border = "none";
-    document.getElementById("birthdateError").textContent = "";
+    removeError("birthdate");
   }
 
-  if (!Number(quantity.value >=0 ) || !Number(quantity.value <= 99)|| quantity.value == "") {
-    quantity.style.border = "2px solid red";
-    document.getElementById("quantityError").textContent = "Veuillez entrer un chiffre entre 0 et 99";
+  if (!Number(quantity.value >=0 ) || !Number(quantity.value <= 99)|| quantity.value === "") {
+    addError("quantity", "Veuillez entrer un chiffre entre 0 et 99");
     error = true;
   } else {
-    quantity.style.border = "none";
-    document.getElementById("quantityError").textContent = "";
+    removeError("quantity");
   }
 
   if (!conditions.checked) {
-    conditions.style.border =  "2px solid red";
-    document.getElementById("checkboxError").textContent = "Veuillez cochez la case";
+    addError("checkbox1", "Veuillez cochez la case");
     error = true;
-  } 
+  } else {
+    removeError("checkbox1");
+  }
 
   if (!error) {
     document.getElementById("sectionForm").className= "sectionFormClose";
     document.getElementById("btn-close").className= "btn-close-visible";
-    fermer.style.visibility = "visible";
+    btnClose.style.visibility = "visible";
     document.getElementById("message").className= "message-thx";
     message.style.visibility = "visible";
   }

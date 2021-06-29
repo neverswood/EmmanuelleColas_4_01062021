@@ -266,6 +266,10 @@ input {
   height: 48px;
 }
 
+.formData.error {
+  border-color: red;
+}
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -502,7 +506,7 @@ input {
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  width: 430px;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -557,17 +561,16 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 2.5rem;
+    width: 354px;
+    font-weight: 500;
+    font-size: 48px;
     white-space: normal;
     margin: 0;
     font-weight: bold;
-    text-align: center;
   }
   .hero-text {
-    width: unset;
-    font-size: 1rem;
+    font-size: 13px;
     margin-top: 35px;
-    text-align: center;
   }
   .hero-img img {
     border-radius: 10px;
@@ -577,10 +580,13 @@ footer {
     display: block;
     margin: 32px auto 10px;
     padding: 12px 35px;
+    font-size: 14px;
   }
+
   .copyrights {
     margin-top: 50px;
     text-align: center;
+    font-size: 10px;
   }
 }
 
