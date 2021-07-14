@@ -8,6 +8,7 @@ function editNav() {
 }
 
 // DOM Elements
+const bodystyle = document.querySelector("body");
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalBottom = document.querySelectorAll(".bbottom");
@@ -25,28 +26,26 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  bodystyle.style.position = "fixed";
   form.classList.remove("sectionFormClose");
   btnClose.style.visibility = "hidden";
   message.style.visibility = "hidden";
 } 
 
 // Close modal event
-
-function closeModal () {            // ferme le modal
+function closeModal () {          
   modalbg.style.display = "none";
+  bodystyle.style.position = "relative";
 }
 
 // Close modal form
-
 close.addEventListener("click", closeModal);
 
-// Close modal message
-
+// Close modal when form is success
 btnClose.addEventListener("click", closeModal);
 
 
-// Validation
-
+// Validation 
 function addError(label, message) {
   document.getElementById(label).style.border = "2px solid red";
   document.getElementById(`${label}Error`).textContent = message;
@@ -56,15 +55,6 @@ function removeError (label) {
   document.getElementById(label).style.border = "none";
   document.getElementById(`${label}Error`).textContent = "";
 }
-
-function checkRequired(inputArr) {
-  inputArr.forEach(function(input) {
-    if (input.value.trim() === '') {
-      input.innerText = "Ce champ est requis";
-    } 
-  });
-}
-
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -90,7 +80,6 @@ form.addEventListener("submit", (e) => {
     error = true;
   } else {
     removeError("last");
-    error = true;
   }
 
   if ( !email.value.match(emailRegex)) {
@@ -107,7 +96,7 @@ form.addEventListener("submit", (e) => {
     removeError("birthdate");
   }
 
-  if (!Number(quantity.value >=0 ) || !Number(quantity.value <= 99)|| quantity.value === "") {
+  if (!Number(quantity.value >=0 ) || !Number(quantity.value <= 99) || quantity.value === "") {
     addError("quantity", "Veuillez entrer un chiffre entre 0 et 99");
     error = true;
   } else {
