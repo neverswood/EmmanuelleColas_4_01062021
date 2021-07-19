@@ -157,6 +157,10 @@ main {
   margin: 15px auto;
 }
 
+.sectionFormOpen {
+  display: block;
+}
+
 .sectionFormClose {
   visibility: hidden;
 }
@@ -701,6 +705,10 @@ footer {
     min-width: 0;
   }
 
+  .content {
+    overflow: scroll;
+  }
+
   .topnav a.active {
     margin-top: 40px;
   }
@@ -729,11 +737,5 @@ footer {
     right: 0;
     width: 196px;
     background: white;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .topnav a {
-    display: none;
   }
 }

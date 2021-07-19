@@ -15,6 +15,7 @@ const modalBottom = document.querySelectorAll(".bbottom");
 const formData = document.querySelectorAll(".formData");
 const close = document.getElementById("close");
 const form = document.getElementById("sectionForm");
+const formClose = document.getElementById("sectionFormClose");
 const btnClose = document.getElementById("btn-close");
 const message = document.getElementById("message");
 const inputForm = document.querySelectorAll("text-control");
@@ -27,9 +28,12 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
   bodystyle.style.position = "fixed";
-  form.classList.remove("sectionFormClose");
+  //form.classList.remove("sectionFormClose");
   btnClose.style.visibility = "hidden";
   message.style.visibility = "hidden";
+  document.getElementById("sectionForm").className= "sectionFormOpen";
+  formClose.style.visibility = "visible";
+  
 } 
 
 // Close modal event
