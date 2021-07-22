@@ -30,17 +30,14 @@ img {
 }
 
 .topnav {
-  margin: 3.5% 3.5% 3.5% 0;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
   display: flex;
-  flex-wrap: nowrap;
 }
 
 .header-logo {
   float: left;
-}
-
-.main-navbar {
-  float: right;
 }
 
 .topnav a {
@@ -56,7 +53,8 @@ img {
 }
 
 .topnav a:hover {
-  color: #ffffff;
+  background-color: #ff0000;
+  color: #fff;
   border-radius: 15px;
 }
 
@@ -71,15 +69,13 @@ img {
 }
 
 .home {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fff;
 }
 
 main {
   font-size: 20px;
   font-weight: bolder;
   color: black;
-  /*padding: 0.5vw 2vw 0 2vw;
-  margin: 1px 20px 15px;*/
   border-radius: 2rem;
   text-align: justify;
 }
@@ -174,11 +170,7 @@ main {
   font-size: 18px;
   background: #fe142f;
   border: #fe142f;
-  /*display: flex;
-  margin: 105px;*/
-  /*padding: 2em;*/
   color: #fff;
-  /*padding: 0.75rem 2.5rem;*/
   border-radius: 1rem;
   cursor: pointer;
   width: 151px;
@@ -299,14 +291,13 @@ input {
   visibility: visible;
   position: absolute;
   top: 95px;
-  /*margin-right: 30px;*/
   font-size: 30px;
   width: 85%;
-  height: 940px;
+  height: 657px;
 }
 
 .thx {
-  margin: auto 10px;
+  margin: 160px 10px 165px 10px;
   text-align: center;
 }
 
@@ -529,27 +520,16 @@ footer {
     margin: 0.5%;
   }
 
-  .topnav a {
-    display: none;
-  }
-
-  .topnav a.icon {
-    margin-top: 0;
-    position: absolute;
-    right: 0;
-  }
-
   .main-navbar {
     position: absolute;
     z-index: 1000;
     right: 0;
     width: 196px;
-    background: white;
+    background: #fff;
   }
 
   main {
     padding: 0;
-    /* margin: 20px 0 0 0;*/
   }
 
   .content {
@@ -559,46 +539,15 @@ footer {
   .bground {
     margin-top: 75px;
   }
-  /*
-  .content {
-    margin: 0;
-  }*/
 }
 
-@media screen and (min-width: 768px) {
-  .topnav {
-    justify-content: space-between;
-  }
-
-  /*
-  .hero-text {
-    width: 800px;
-  }*/
-}
-
-@media screen and (max-width: 764px) {
+@media screen and (max-width: 767px) {
   img {
     width: 125px;
   }
-  /*
-  .main-navbar {
-    position: absolute;
-    z-index: 5;
-    right: 0;
-    width: 196px;
-    background: white;
-  }*/
 
   .top-nav {
     margin: 30px 10px 10px;
-  }
-  /*
-  .topnav a {
-    display: none;
-  }*/
-
-  .topnav a.active {
-    margin-top: 40px;
   }
 
   .topnav.responsive {
@@ -606,18 +555,7 @@ footer {
   }
 
   .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-    left: 177px;
     font-size: 20px;
-  }
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-    font-size: 1rem;
   }
 }
 
@@ -679,23 +617,14 @@ footer {
     margin: 20px;
   }
 
+  .topnav a.icon {
+    display: block;
+    color: red;
+  }
+
   .topnav a {
     display: none;
   }
-
-  .topnav a.icon {
-    display: block;
-    color: red;
-    margin-top: 0;
-    position: absolute;
-    right: 0;
-  }
-  /*
-  .topnav a.icon {
-    float: right;
-    display: block;
-    color: red;
-  }*/
 
   .hero-headline {
     font-size: 48px;
@@ -709,8 +638,17 @@ footer {
     overflow: scroll;
   }
 
-  .topnav a.active {
-    margin-top: 40px;
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .main-navbar {
+    position: absolute;
+    z-index: 5;
+    right: 13px;
+    top: 35px;
+    width: 196px;
+    background: #fff;
   }
 
   .topnav.responsive a {
@@ -718,24 +656,5 @@ footer {
     display: block;
     text-align: left;
     font-size: 1rem;
-  }
-
-  .topnav.responsive {
-    position: relative;
-  }
-
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 20px;
-  }
-
-  .main-navbar {
-    position: absolute;
-    z-index: 1000;
-    right: 0;
-    width: 196px;
-    background: white;
   }
 }
